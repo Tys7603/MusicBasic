@@ -6,14 +6,244 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="8dp"
+       android:layout_marginBottom="-10dp"
+       app:cardCornerRadius="20dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#40212529">
+
+         <ImageView
+             android:id="@+id/imageView4"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="8dp"
+             android:contentDescription="@string/app_name"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:srcCompat="?attr/actionModeCloseDrawable" />
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/cardView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="32dp"
+             app:cardCornerRadius="20dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical"
+
+                >
+
+              <androidx.cardview.widget.CardView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:cardCornerRadius="20dp">
+
+                 <ImageView
+                     android:layout_width="150dp"
+                     android:layout_height="150dp"
+                     android:contentDescription="@string/app_name"
+                     android:src="@drawable/ic_launcher_background" />
+              </androidx.cardview.widget.CardView>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/song_name"
+                   android:layout_gravity="center"
+                   android:textSize="20sp"
+                   android:textColor="#000"
+                   android:textStyle="bold"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/artist"
+                   android:layout_gravity="center"
+                   android:textSize="20sp"
+                   android:textColor="#000"
+                   android:textStyle="bold"
+                   />
+            </LinearLayout>
+
+         </androidx.cardview.widget.CardView>
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/constraintLayout457"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="24dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:src="@drawable/songs"
+                   android:contentDescription="@string/app_name"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:src="@drawable/songs"
+                   android:contentDescription="@string/app_name"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="68dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:src="@drawable/songs"
+                   android:contentDescription="@string/app_name"/>
+            </androidx.cardview.widget.CardView>
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <ProgressBar
+             android:id="@+id/progressBar"
+             style="?android:attr/progressBarStyleHorizontal"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="24dp"
+             android:layout_marginTop="32dp"
+             android:layout_marginEnd="24dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/constraintLayout457" />
+
+         <TextView
+             android:id="@+id/textView4"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="24dp"
+             android:layout_marginTop="16dp"
+             android:text="@string/start_music"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+         <TextView
+             android:id="@+id/textView3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"
+             android:layout_marginEnd="24dp"
+             android:text="@string/end_music"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/constraintLayout4"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="32dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="1.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:src="@drawable/songs"
+                   android:contentDescription="@string/app_name"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:src="@drawable/songs"
+                   android:contentDescription="@string/app_name"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:contentDescription="@string/app_name"
+                   android:src="@drawable/songs" />
+            </androidx.cardview.widget.CardView>
+         </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

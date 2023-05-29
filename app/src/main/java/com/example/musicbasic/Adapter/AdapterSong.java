@@ -2,6 +2,7 @@ package com.example.musicbasic.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.musicbasic.DetailActivity;
 import com.example.musicbasic.Interface.ItemClickUri;
 import com.example.musicbasic.Modal.Song;
 import com.example.musicbasic.R;
@@ -45,7 +47,7 @@ public class AdapterSong extends RecyclerView.Adapter<AdapterSong.viewHolder>  {
                 @Override
                 public void onClick(View view) {
                     itemClickUri.onClickItemUri(list.get(holder.getAdapterPosition()).getFile());
-                   // Toast.makeText(context, list.get(holder.getAdapterPosition()).getFile() + "", Toast.LENGTH_SHORT).show();
+                    context.startActivity(new Intent(context, DetailActivity.class));
                 }
             });
         }

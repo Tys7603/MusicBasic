@@ -9,6 +9,8 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -36,28 +38,29 @@ public class MainActivity extends AppCompatActivity {
 
         getListRaw();
         init();
-        AdapterSong adapterSong = new AdapterSong(list, getApplicationContext(), new ItemClickUri() {
-            @Override
-            public void onClickItemUri(Uri uri) {
-                try {
-                    mediaPlayer.reset();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                mediaPlayer = MediaPlayer.create(getApplicationContext(),uri);
-                mediaPlayer.start();
-
-            }
-        });
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        rcvSong.setLayoutManager(layoutManager);
-        rcvSong.setAdapter(adapterSong);
+        setAdapterSong();
     }
 
     public void init(){
         rcvSong = findViewById(R.id.rc_ListSong);
         countSongs =findViewById(R.id.count_songs);
         countSongs.setText(String.valueOf(list.size()));
+    }
+
+    public void setAdapterSong(){
+        AdapterSong adapterSong = new AdapterSong(list, this , uri -> {
+            try {
+                mediaPlayer.reset();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),uri);
+            mediaPlayer.start();
+
+        });
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        rcvSong.setLayoutManager(layoutManager);
+        rcvSong.setAdapter(adapterSong);
     }
 
     public void getListRaw(){
